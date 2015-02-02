@@ -101,12 +101,7 @@
 }).call(this);
 
 (function() {
-  if (document.readyState !== 'complete') {
-    angular.element(document).ready(function() {
-      return angular.bootstrap(document, ['app']);
-    });
-  } else {
-    angular.bootstrap(document, ['app']);
-  }
-
+  document.addEventListener("deviceready", function() {
+    return angular.bootstrap(document, ['app']);
+  });
 }).call(this);
